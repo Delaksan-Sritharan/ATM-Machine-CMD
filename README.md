@@ -1,108 +1,48 @@
-ATM Machine Command Line Interface
-A simple command-line interface (CLI) application simulating an ATM (Automated Teller Machine) for basic banking operations. This project is developed in Java and demonstrates core concepts of object-oriented programming, user input handling, and basic transaction logic.
+---
 
-Table of Contents
-Features
+# Simple ATM System
 
-How to Run
+This is a basic command-line ATM (Automated Teller Machine) system developed in Java. It simulates core ATM functionalities such as **checking balance**, **depositing funds**, and **wierdthdrawing cash** for a single user.
 
-Dependencies
+---
 
-Project Structure
+## Features
 
-Future Enhancements
+* **User Authentication**: Requires a valid username and PIN for access.
+* **Check Balance**: Allows the user to view their current account balance.
+* **Deposit**: Enables the user to add funds to their account.
+* **Withdraw**: Allows the user to withdraw funds, with checks for sufficient balance.
+* **Input Validation**: Handles invalid input for amounts and menu choices.
 
-Contributing
+---
 
-License
+## Getting Started
 
-Author
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Features
-User Authentication: Secure login with a predefined account number and PIN.
+### Prerequisites
 
-Balance Inquiry: View the current balance of the authenticated account.
+You'll need a **Java Development Kit (JDK)** installed on your system. This project was developed with Java 17, but any recent JDK version should work.
 
-Cash Withdrawal: Withdraw cash with validation for sufficient funds and valid denominations.
+---
 
-Cash Deposit: Deposit cash into the authenticated account.
+### Installation
 
-Transaction History: View a simplified history of recent transactions.
+1.  **Clone the repository (or copy the files)**:
+    Save the `User.java`, `ATM.java`, and `Main.java` files into a single directory on your local machine.
 
-Exit: Safely exit the ATM application.
+2.  **Compile the Java files**:
+    Open a terminal or command prompt, navigate to the directory where you saved the files, and compile them using the Java compiler:
 
-Error Handling: Basic error handling for invalid inputs and insufficient funds.
+    ```bash
+    javac User.java ATM.java Main.java
+    ```
 
-How to Run
-To run this project, follow these steps:
+---
 
-Prerequisites:
+## How to Run
 
-Ensure you have Java Development Kit (JDK) 11 or higher installed on your system. You can download it from Oracle's website.
+After successful compilation, you can run the ATM system from your terminal:
 
-Clone the Repository (if applicable):
-If this project is hosted on a version control system (e.g., Git), clone it to your local machine:
-
-git clone <repository-url>
-cd <project-directory>
-
-Otherwise, ensure you have all the Java source files (.java) in a designated directory.
-
-Compile the Java Source Files:
-Open your terminal or command prompt, navigate to the directory where your .java files are located, and compile them:
-
-javac Main.java BankAccount.java ATM.java Transaction.java # Add all your .java files here
-
-Note: Replace Main.java, BankAccount.java, ATM.java, and Transaction.java with the actual names of your primary Java source files.
-
-Run the Application:
-After successful compilation, run the main class:
-
+```bash
 java Main
-
-The ATM CLI will then prompt you for your account number and PIN.
-
-Dependencies
-This project uses standard Java libraries and does not have any external dependencies beyond the JDK.
-
-Project Structure
-A typical project structure might look like this:
-
-atm-cli-java/
-├── src/
-│   ├── Main.java             # Entry point of the application
-│   ├── ATM.java              # Handles ATM logic and user interaction
-│   ├── BankAccount.java      # Represents a bank account with balance and account info
-│   ├── Transaction.java      # (Optional) Represents a single transaction
-│   └── util/                 # (Optional) Package for utility classes
-│       └── InputHandler.java # (Optional) Handles user input parsing
-└── README.md
-
-Future Enhancements
-Database Integration: Store account data and transaction history persistently using a database (e.g., SQLite, MySQL).
-
-Multiple Accounts: Support for multiple user accounts.
-
-More Transaction Types: Add options like fund transfers, bill payments.
-
-Enhanced Security: Implement more robust authentication and session management.
-
-Logging: Add logging to record transactions and system events.
-
-Improved UI: While still CLI, make the output more visually appealing (e.g., using ASCII art for branding).
-
-Unit Tests: Write unit tests for core functionalities.
-
-Contributing
-Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
-
----
-
-## 🙋 Author
-
-**Delaksan Sritharan**  
-> "Learning Java. Dreaming Big. Building with Heart."
-
----
-License
-This project is open-source and available under the MIT License.
