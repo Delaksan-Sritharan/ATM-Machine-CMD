@@ -6,20 +6,37 @@ public class ATM {
     public ATM(User user){
         this.user = user;
     }
-    public void start(){
+    public void start() {
+
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Dela ATM");
 
-        System.out.println("Enter username : ");
-        String userName = input.nextLine();
+        String userName;
+        while (true) {
+            System.out.print("Enter username: ");
+            userName = input.nextLine();
+            if (!userName.trim().isEmpty() && !userName.matches(".*\\s.*")) {
+                break;
+            } else {
+                System.out.println("Invalid input. Username cannot be empty or contain whitespace characters. Please try again.");
+            }
+        }
 
-        System.out.println("Enter PIN : ");
-        String pin = input.nextLine();
+        String pin;
+        while (true) {
+            System.out.print("Enter PIN: ");
+            pin = input.nextLine();
+            if (!pin.trim().isEmpty() && !pin.matches(".*\\s.*")) {
+                break;
+            } else {
+                System.out.println("Invalid input. PIN cannot be empty or contain whitespace characters. Please try again.");
+            }
+        }
 
-        if (userName.equals(user.getuserName()) && pin.equals(user.getPin())){
+        if (userName.equals(user.getUserName()) && pin.equals(user.getPin())) {
             System.out.println("Login Successful!");
-            boolean running =  true;
-            while (running){
+            boolean running = true;
+            while (running) {
                 System.out.println("""
                         Select an option
                         1. Check Balance
@@ -27,20 +44,20 @@ public class ATM {
                         3. Withdraw
                         4. Exit
                         """);
-                System.out.println("Choice : ");
+                System.out.print("Choice : ");
                 int choice = input.nextInt();
 
-                switch (choice){
+                switch (choice) {
                     case 1:
-                        System.out.println("Balance: $"+user.getBalance());
+                        System.out.print("Balance: $ " + user.getBalance());
                         break;
                     case 2:
-                        System.out.println("Enter amount to deposit : ");
+                        System.out.print("Enter amount to deposit : ");
                         double deposit = input.nextDouble();
                         user.deposit(deposit);
                         break;
                     case 3:
-                        System.out.println("Enter amount to withdraw : ");
+                        System.out.print("Enter amount to withdraw : ");
                         double withdraw = input.nextDouble();
                         user.withdraw(withdraw);
                         break;
@@ -53,10 +70,11 @@ public class ATM {
 
                 }
             }
-            }else{
+        } else {
             System.out.println("Invalid credentials");
 
-        }input.close();
+        }
+        input.close();
     }
 
 }

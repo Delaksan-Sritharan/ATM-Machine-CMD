@@ -8,7 +8,7 @@ public class User {
         this.pin = pin;
         this.balance = 0.0;
     }
-    public String getuserName(){
+    public String getUserName(){
         return userName;
     }
     public String getPin(){
