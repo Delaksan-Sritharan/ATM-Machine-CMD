@@ -96,5 +96,13 @@ Unit Tests: Write unit tests for core functionalities.
 Contributing
 Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
 
+---
+
+## 🙋 Author
+
+**Delaksan Sritharan**  
+> "Learning Java. Dreaming Big. Building with Heart."
+
+---
 License
 This project is open-source and available under the MIT License.
