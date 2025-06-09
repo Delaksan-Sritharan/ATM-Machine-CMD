@@ -45,21 +45,35 @@ public class ATM {
                         4. Exit
                         """);
                 System.out.print("Choice : ");
+                if (input.hasNextInt()){
                 int choice = input.nextInt();
+                input.nextLine();
 
                 switch (choice) {
                     case 1:
-                        System.out.print("Balance: $ " + user.getBalance());
+                        System.out.printf("Balance: $ %.2f%n", user.getBalance());
                         break;
                     case 2:
-                        System.out.print("Enter amount to deposit : ");
-                        double deposit = input.nextDouble();
-                        user.deposit(deposit);
+                        System.out.print("Enter amount to deposit: ");
+                        if (input.hasNextDouble()) {
+                            double deposit = input.nextDouble();
+                            user.deposit(deposit);
+                        } else {
+                            System.out.println("Invalid amount.");
+                            input.next();
+                        }
+                        input.nextLine();
                         break;
                     case 3:
-                        System.out.print("Enter amount to withdraw : ");
-                        double withdraw = input.nextDouble();
-                        user.withdraw(withdraw);
+                        System.out.print("Enter amount to withdraw: ");
+                        if (input.hasNextDouble()) {
+                            double withdraw = input.nextDouble();
+                            user.withdraw(withdraw);
+                        } else {
+                            System.out.println("Invalid amount.");
+                            input.next();
+                        }
+                        input.nextLine();
                         break;
                     case 4:
                         running = false;
@@ -67,7 +81,10 @@ public class ATM {
                         break;
                     default:
                         System.out.println("Invalid choice. Try again");
-
+}
+                }else {
+                    System.out.println("Please enter a number between 1 and 4.");
+                    input.next();
                 }
             }
         } else {
